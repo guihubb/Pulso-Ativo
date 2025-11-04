@@ -1,0 +1,95 @@
+/* =================================================== */
+/* ============== ESTILOS DA PÁGINA DE LOGIN/CADASTRO ============== */
+/* =================================================== */
+
+/* --- O Card/Box do Formulário --- */
+#formulario-login {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Largura máxima do formulário */
+    text-align: center;
+    align-items: center;
+}
+
+/* --- Estilo da Tabela e Células --- */
+#formulario-login table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaçamentos padrão da tabela */
+}
+
+#formulario-login td {
+    padding: 8px 0;
+}
+
+/* --- Estilo do Título (<thead>) --- */
+#formulario-login thead {
+    display: block; /* Permite usar margens */
+    font-size: 2em; /* Tamanho de um título principal */
+    font-weight: bold;
+    color: #003D4F; /* Usando o azul da sua paleta */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- Estilo dos Labels e Inputs --- */
+#formulario-login label {
+    font-weight: bold;
+    color: #495057; /* Cinza escuro para o texto */
+    padding-right: 15px; /* Espaço entre o label e o input */
+}
+
+#formulario-login input[type="text"],
+#formulario-login input[type="email"],
+#formulario-login input[type="date"],
+#formulario-login input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Transição suave para o foco */
+}
+
+/* Efeito de FOCO: Dá um destaque visual quando o usuário clica no campo */
+#formulario-login input:focus {
+    outline: none; /* Remove a borda padrão do navegador */
+    border-color: #5EABC4; /* Usa o azul claro da sua paleta */
+    box-shadow: 0 0 8px rgba(94, 171, 196, 0.4); /* Sombra suave azulada */
+}
+
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE PARA CELULAR ============== */
+/* =================================================== */
+
+@media (max-width: 500px) {
+    body {
+        /* Remove o alinhamento central para o formulário ocupar a tela */
+        align-items: flex-start;
+        background-color: white; /* Fundo branco no mobile */
+    }
+
+    #formulario-login {
+        /* Remove a sombra e o padding extra no mobile */
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    /* Empilha o label e o input um sobre o outro */
+    #formulario-login tr,
+    #formulario-login td {
+        display: block;
+        width: 100%;
+    }
+
+    #formulario-login label {
+        /* Alinha o label à esquerda e dá um espaço abaixo */
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 5px;
+        display: block; /* Garante que o margin-bottom funcione */
+    }
+}

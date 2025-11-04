@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/jpg">
+    <title>Sobre o Pulso Ativo</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./img/logo.jpg" alt="logo" class="logo">
+        </div>
+
+        <nav class="navegacao-principal">
+            <a href="./index.html">Home</a>
+            <a href="./guias.html">Guias & Artigos</a>
+            <a href="./pilares.html">Pilares do Bem-Estar</a>
+            <a href="./recursos.html">Recursos Gratuitos</a>
+            <a href="./imc.html">Calculadora IMC</a>
+            <a href="./suplementos.html">Suplementos</a>
+            <a href="./sobre.html">Sobre Pulso Ativo</a>
+            <a href="./contato.html">Contato</a>
+        </nav>
+
+        <div class="login-container">
+            <a href="./login.html" class="login-link">Login ou cadastro</a>
+        </div>
+
+        <button onclick="cliqueMenuHamburguer()" class="btn-mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navegacao-principal-mobile">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./guias.html">Guias & Artigos</a></li>
+                <li><a href="./pilares.html">Pilares do Bem-Estar</a></li>
+                <li><a href="./recursos.html">Recursos Gratuitos</a></li>
+                <li><a href="./imc.html">Calculadora IMC</a></li>
+                <li><a href="./suplementos.html">Suplementos</a></li>
+                <li><a href="./sobre.html">Sobre Pulso Ativo</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="container-perfil">
+            <div id="container-info-user">      
+                <!-- AQUI LOGIN -->
+                <h3>Username: <p class="nome-user"></p></h3>
+                <h3>Email: <p class="email-user"></p></h3>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="rodapeConteudo">
+            <div>
+                <img src="./img/logoFooterSemFundo.png" alt="logo" style="width: 200px;">
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./guias.html">Artigos</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="./suplementos.html">Suplementos</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Junte-se a Nós</h3>
+                <p>Receba dicas exclusivas no seu e-mail.</p>
+                <form action="" id="formRodape">
+                    <label for="">Nome:</label><br>
+                    <input type="text" id="inputNome"> <br>
+
+                    <label for="">E-mail:</label> <br>
+                    <input type="email"> <br>
+
+                    <button class="btn-rodape" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="rodapeInferior">
+            <p>© 2025 Pulso Ativo. Todos os direitos reservados. │ Política de Privacidade │ Termos de Uso </p>
+        </div>
+    </footer>
+    <script src="./js/menuHamburguer.js"></script>
+    <script src="./js/loginRodape.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/salvarNomeUserPerfil.js"></script>
+    <script src="./js/salvarNomeUserHome.js"></script>
+</body>
+
+</html>
