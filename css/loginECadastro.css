@@ -12,6 +12,7 @@
     max-width: 500px; /* Largura máxima do formulário */
     text-align: center;
     align-items: center;
+    margin:60px auto;
 }
 
 /* --- Estilo da Tabela e Células --- */

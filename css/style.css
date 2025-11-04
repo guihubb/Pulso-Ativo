@@ -76,6 +76,10 @@ header {
   /* Escondido no desktop */
 }
 
+.container-principal{
+  padding: 20px 60px;
+}
+
 /* --- Seções com colunas (texto e imagem, pilares) --- */
 #textoComImagem {
   display: flex;
