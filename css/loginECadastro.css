@@ -94,3 +94,12 @@
         display: block; /* Garante que o margin-bottom funcione */
     }
 }
+
+#resultado-login{
+	margin:0 auto;
+	padding:10px;
+	color:#ff0000;
+	font-weight:bold;
+	text-align:center;
+	display:none;
+}
