@@ -31,12 +31,11 @@ if (formImc) {
         const valorPeso = parseFloat(peso.value);
         const valorAltura = parseFloat(altura.value);
 
-        // Validação de NaN (importante para evitar erros)
         if (isNaN(valorPeso) || isNaN(valorAltura) || valorPeso <= 0 || valorAltura <= 0) {
             resultado.style.display = 'block';
             resultado.innerHTML = "<p>Valores inválidos. Digite novamente.</p>";
             resultado.className = 'perigo';
-            return; // Para a execução
+            return;
         }
         
         const imc = valorPeso / (valorAltura * valorAltura);
