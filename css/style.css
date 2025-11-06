@@ -29,6 +29,33 @@ hr {
   /* Vamos usar margens em vez de <hr> */
 }
 
+/* Garante que o html e o body ocupem a altura total */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh; /* Altura mínima de 100% da tela */
+    display: flex;
+    flex-direction: column; /* Organiza os filhos (header, main, footer) em coluna */
+}
+
+/* ESTA É A LINHA MÁGICA:
+  Diz ao <main> para "crescer" e ocupar todo o espaço 
+  disponível, empurrando o <footer> para baixo.
+*/
+main {
+    flex-grow: 1;
+}
+
+/* BÔNUS: Garantir que o footer tenha 100% de largura.
+  (O Flexbox em coluna já faz isso, mas não custa garantir)
+*/
+footer.rodape {
+    width: 100%;
+    flex-shrink: 0; /* Impede que o footer encolha */
+}
+
 
 /* =================================================== */
 /* ============== 2. ESTILOS DO DESKTOP ============== */
