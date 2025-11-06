@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header>
         <div>
             <img src="./img/logo.jpg" alt="logo" class="logo">
@@ -50,6 +51,94 @@
         </nav>
     </header>
 
+    <main>
+        <div class="container-principal">
+
+            <header class="pagina-cabecalho">
+                <h1>Suas Ferramentas para uma Vida Plena</h1>
+                <p class="subtitulo-pagina">Acreditamos que a transformação do bem-estar começa com passos práticos.
+                    Nesta página, reunimos guias e planners exclusivos para ajudar você a colocar a saúde em
+                    movimento, de forma gratuita.</p>
+            </header>
+
+            <section class="recurso-destaque">
+                <div class="recurso-destaque-texto">
+                    <h2>O Recurso Principal: Kit de Início Rápido Pulso Ativo</h2>
+                    <p>Quer dar o primeiro passo, mas não sabe por onde começar? Preparamos um <strong>Kit de Início
+                            Rápido</strong>
+                        em PDF que inclui nossos 3 guias mais populares:</p>
+                    <ul>
+                        <li><i class="icone-check"></i> <strong>Planner Semanal de Atividades Físicas</strong></li>
+                        <li><i class="icone-check"></i> <strong>A Lista de Compras da Despensa Saudável</strong></li>
+                        <li><i class="icone-check"></i> <strong>O Guia de 5 Minutos de Mindfulness</strong></li>
+                    </ul>
+                    <p>Insira seu nome e e-mail abaixo para receber o kit completo gratuitamente em seu e-mail e
+                        juntar-se à nossa comunidade.</p>
+                </div>
+                <div class="recurso-destaque-form">
+                    <form id="formRecursos">
+                        <h3>Receba seu Kit Gratuito!</h3>
+                        <div class="input-group">
+                            <label for="inputNomeRecursos">Seu primeiro nome:</label>
+                            <input type="text" id="inputNomeRecursos" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="inputEmailRecursos">Seu melhor e-mail:</label>
+                            <input type="email" id="inputEmailRecursos" required>
+                        </div>
+                        <button type="submit" class="btn">Quero meu Kit!</button>
+                    </form>
+                    <div id="mensagemResultado">
+                        <!-- Mensagem de sucesso ou erro -->
+                    </div>
+                </div>
+            </section>
+
+            <hr class="divisor-secao">
+
+            <section class="outros-recursos">
+                <h2>Downloads Rápidos e Práticos</h2>
+                <p>Prefere um material específico? Acesse nossos guias individuais abaixo.</p>
+
+                <div class="recursos-grid">
+
+                    <article class="card-recurso">
+                        <img src="./img/recurso-planner.jpg" alt="Planner semanal de atividades físicas">
+                        <div class="card-recurso-conteudo">
+                            <h4>Planner Semanal de Atividades Físicas</h4>
+                            <p>Um PDF simples e funcional para você planejar seus movimentos, rastrear sua consistência
+                                e
+                                celebrar suas vitórias semanais.</p>
+                            <a href="./downloads/planner-semanal.pdf" class="btn-pilar" download>Baixar Agora (PDF)</a>
+                        </div>
+                    </article>
+
+                    <article class="card-recurso">
+                        <img src="./img/recurso-compras.jpg" alt="Lista de compras saudáveis">
+                        <div class="card-recurso-conteudo">
+                            <h4>Lista de Compras da Despensa Saudável</h4>
+                            <p>Não sabe o que comprar no mercado? Use nosso checklist para garantir que sua despensa
+                                esteja sempre cheia de opções nutritivas e versáteis.</p>
+                            <a href="./downloads/lista-compras.pdf" class="btn-pilar" download>Baixar Agora (PDF)</a>
+                        </div>
+                    </article>
+
+                    <article class="card-recurso">
+                        <img src="./img/recurso-mindfulness.jpg" alt="Pessoa meditando">
+                        <div class="card-recurso-conteudo">
+                            <h4>Guia de 5 Minutos de Mindfulness</h4>
+                            <p>Novo na meditação? Este guia rápido ensina o básico para você começar a praticar hoje
+                                mesmo e acalmar sua mente em qualquer lugar.</p>
+                            <a href="./downloads/guia-mindfulness.pdf" class="btn-pilar" download>Baixar Agora (PDF)</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
     <footer class="rodape">
         <div class="rodapeConteudo">
             <div>
@@ -74,11 +163,13 @@
             <p>© 2025 Pulso Ativo. Todos os direitos reservados. │ Política de Privacidade │ Termos de Uso </p>
         </div>
     </footer>
-     <script src="./js/menuHamburguer.js"></script>
+
+    <script src="./js/menuHamburguer.js"></script>
     <script src="./js/loginRodape.js"></script>
     <script src="./js/login.js"></script>
     <script src="./js/salvarNomeUserPerfil.js"></script>
     <script src="./js/salvarNomeUserHome.js"></script>
+    <script src="./js/receberKit.js"></script>
 </body>
 
 </html>
