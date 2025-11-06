@@ -9,18 +9,19 @@ const loginContainer = document.querySelector('.login-container')
 function cadastroUser(evento){
     evento.preventDefault();
 
-    let nome = inputNome.value 
-    let email = inputEmail.value 
-    let senha = inputSenha.value 
-    let confirmarSenha = inpuitConfirmarSenha.value 
+    let nome = inputNome.value
+    let email = inputEmail.value
+    let senha = inputSenha.value
+    let confirmarSenha = inpuitConfirmarSenha.value
 
     if(senha != confirmarSenha){
         nome.value = ' ';
         email.value = ' ';
         senha.value = ' ';
         confirmarSenha.value = ' ';
-        resultadoLogin.innerHTML = "<h3>Senhas diferentes. Digite novamente</h3>"
+        $("#resultado-login").html("<h3>Senhas diferentes. Digite novamente</h3>").show();
     } else{
+		$("#resultado-login").html("").hide();
         localStorage.setItem('nomeUsuario', nome)
         localStorage.setItem('emailUsuario', email)
         setTimeout(()=>{
