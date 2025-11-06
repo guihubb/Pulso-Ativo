@@ -1,105 +1,121 @@
 /* =================================================== */
-/* ============== ESTILOS DA PÁGINA DE LOGIN/CADASTRO ============== */
+/* ============== ESTILOS LOGIN / CADASTRO / PERFIL ============== */
 /* =================================================== */
 
-/* --- O Card/Box do Formulário --- */
-#formulario-login {
+/* Container para centralizar o card na tela.
+  Use este <main> em vez do <main> antigo.
+*/
+.container-central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+    background-color: #f0f4f8; /* Fundo suave */
+    font-family: sans-serif;
+}
+
+/* A CLASSE MÁGICA: Define o estilo do "card" 
+  que será usado no formulário E no perfil.
+*/
+.login-card {
     background-color: white;
-    padding: 40px;
+    padding: 30px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px; /* Largura máxima do formulário */
+    max-width: 500px;
+}
+
+/* --- Título do Card --- */
+.login-card h2 {
     text-align: center;
-    align-items: center;
-    margin:60px auto;
-}
-
-/* --- Estilo da Tabela e Células --- */
-#formulario-login table {
-    width: 100%;
-    border-collapse: collapse; /* Remove espaçamentos padrão da tabela */
-}
-
-#formulario-login td {
-    padding: 8px 0;
-}
-
-/* --- Estilo do Título (<thead>) --- */
-#formulario-login thead {
-    display: block; /* Permite usar margens */
-    font-size: 2em; /* Tamanho de um título principal */
-    font-weight: bold;
-    color: #003D4F; /* Usando o azul da sua paleta */
-    text-align: center;
+    color: var(--cor-texto-logo); /* Usando sua variável de cor */
+    margin-top: 0;
     margin-bottom: 30px;
+    font-size: 2em;
 }
 
-/* --- Estilo dos Labels e Inputs --- */
-#formulario-login label {
+/* --- Estilos do FORMULÁRIO --- */
+
+/* Agrupador de label + input */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block; /* Faz o label ocupar a linha inteira */
+    margin-bottom: 8px;
     font-weight: bold;
-    color: #495057; /* Cinza escuro para o texto */
-    padding-right: 15px; /* Espaço entre o label e o input */
+    color: var(--cor-texto-paragrafo);
 }
 
-#formulario-login input[type="text"],
-#formulario-login input[type="email"],
-#formulario-login input[type="date"],
-#formulario-login input[type="password"] {
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group input[type="date"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    transition: all 0.3s ease; /* Transição suave para o foco */
+    transition: all 0.3s ease;
 }
 
-/* Efeito de FOCO: Dá um destaque visual quando o usuário clica no campo */
-#formulario-login input:focus {
-    outline: none; /* Remove a borda padrão do navegador */
-    border-color: #5EABC4; /* Usa o azul claro da sua paleta */
-    box-shadow: 0 0 8px rgba(94, 171, 196, 0.4); /* Sombra suave azulada */
+.input-group input:focus {
+    outline: none;
+    border-color: var(--cor-azul-principal);
+    box-shadow: 0 0 8px rgba(94, 171, 196, 0.4);
+}
+
+/* --- Estilos do Botão (Reaproveitando a classe .btn) --- */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-azul-principal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--cor-texto-logo);
 }
 
 
-/* =================================================== */
-/* ============== RESPONSIVIDADE PARA CELULAR ============== */
-/* =================================================== */
+/* --- Estilos do PERFIL --- */
 
+.perfil-info {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.perfil-info strong {
+    font-size: 0.9rem;
+    color: #555;
+}
+.perfil-info p {
+    font-size: 1.2rem;
+    color: #000;
+    margin: 5px 0 0 0;
+}
+
+
+/* --- Responsividade --- */
 @media (max-width: 500px) {
-    body {
-        /* Remove o alinhamento central para o formulário ocupar a tela */
-        align-items: flex-start;
-        background-color: white; /* Fundo branco no mobile */
+    .container-central {
+        padding: 0;
+        background-color: white;
     }
 
-    #formulario-login {
-        /* Remove a sombra e o padding extra no mobile */
+    .login-card {
         box-shadow: none;
         padding: 20px;
+        border-radius: 0;
     }
-
-    /* Empilha o label e o input um sobre o outro */
-    #formulario-login tr,
-    #formulario-login td {
-        display: block;
-        width: 100%;
-    }
-
-    #formulario-login label {
-        /* Alinha o label à esquerda e dá um espaço abaixo */
-        text-align: left;
-        padding-right: 0;
-        margin-bottom: 5px;
-        display: block; /* Garante que o margin-bottom funcione */
-    }
-}
-
-#resultado-login{
-	margin:0 auto;
-	padding:10px;
-	color:#ff0000;
-	font-weight:bold;
-	text-align:center;
-	display:none;
 }

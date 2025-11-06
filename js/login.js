@@ -1,4 +1,4 @@
-const formularioLogin = document.querySelector('#formulario-login')
+const formularioLogin = document.querySelector('#form-cadastro')
 const inputNome = document.querySelector('#inputNome')
 const inputSenha = document.querySelector('#senha')
 const inpuitConfirmarSenha = document.querySelector('#confirmar-senha')
@@ -14,11 +14,11 @@ function cadastroUser(evento){
     let senha = inputSenha.value
     let confirmarSenha = inpuitConfirmarSenha.value
 
-    if(senha != confirmarSenha){
-        nome.value = ' ';
-        email.value = ' ';
-        senha.value = ' ';
-        confirmarSenha.value = ' ';
+    if(senha !== confirmarSenha){
+        inputNome.value = '';
+        inputEmail.value = '';
+        inputSenha.value = '';
+        inpuitConfirmarSenha.value = '';  
         $("#resultado-login").html("<h3>Senhas diferentes. Digite novamente</h3>").show();
     } else{
 		$("#resultado-login").html("").hide();
