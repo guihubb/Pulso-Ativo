@@ -128,7 +128,7 @@
 }
 
 /* --- Responsividade para Recursos --- */
-@media (max-width: 900px) {
+@media (max-width: 990px) {
     .recurso-destaque {
         flex-direction: column;
     }
@@ -137,7 +137,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 729px) {
     .recursos-grid {
         grid-template-columns: 1fr; /* 1 coluna */
     }
