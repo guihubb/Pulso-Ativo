@@ -106,16 +106,41 @@
 }
 
 
-/* --- Responsividade --- */
-@media (max-width: 500px) {
-    .container-central {
-        padding: 0;
-        background-color: white;
-    }
+/* TELA 3: Smartphones (Telas pequenas)
+  Para telas com largura máxima de 480px.
+  Aqui sim fazemos ajustes finos.
+*/
+@media (max-width: 480px) {
 
-    .login-card {
-        box-shadow: none;
-        padding: 20px;
-        border-radius: 0;
-    }
+  /* Diminui o preenchimento do container geral */
+  .container-central {
+    padding: 10px;
+    /* Remove a altura mínima para o formulário
+       ficar mais natural em telas curtas */
+    min-height: auto;
+  }
+
+  .login-card {
+    /* Reduz o preenchimento interno do card
+       (padding: 30px 40px no original) 
+       para dar mais espaço ao formulário */
+    padding: 25px 20px;
+  }
+
+  .login-card h2 {
+    /* Diminui um pouco o título principal */
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    /* Botões com menos preenchimento vertical */
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* Ajusta os campos de perfil */
+  .perfil-info p {
+    font-size: 1.1rem;
+  }
 }

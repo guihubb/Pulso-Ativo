@@ -1,0 +1,135 @@
+/* --- Container Principal da Página --- */
+.container-principal {
+    max-width: 900px; /* Define uma largura de leitura confortável */
+    margin: 40px auto; /* Centraliza o conteúdo na página */
+    padding: 0 20px; /* Espaçamento lateral */
+    line-height: 1.7; /* Melhora a legibilidade */
+}
+
+/* --- Título da Página --- */
+.container-principal h1 {
+    text-align: center;
+    color: var(--cor-texto-logo);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.subtitulo-pagina {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--cor-texto-paragrafo);
+    margin-bottom: 50px;
+}
+
+/* --- Estilo Base para cada Seção de Pilar --- */
+.pilar-secao {
+    background-color: var(--cor-fundo-branco);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    padding: 30px;
+    margin-bottom: 40px; /* Espaço entre os pilares */
+    
+    /* A MÁGICA: Borda lateral grossa que dá a cor do pilar */
+    border-left: 7px solid; 
+}
+
+.pilar-secao h2 {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.pilar-secao h3 {
+    color: var(--cor-texto-logo);
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* --- Parágrafo de Destaque "Chamativo" --- */
+.chamativo {
+    background-color: #f8f9fa; /* Fundo levemente acinzentado */
+    border-left: 4px solid; /* Borda de destaque na cor do pilar */
+    padding: 15px 20px;
+    margin: 25px 0;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #333;
+}
+
+.chamativo strong {
+    font-style: normal;
+    color: var(--cor-texto-logo);
+}
+
+/* --- Estilo das Listas (ul) --- */
+.pilar-secao ul {
+    list-style: none; /* Remove as bolinhas pretas */
+    padding-left: 10px;
+}
+
+.pilar-secao li {
+    position: relative;
+    padding-left: 30px; /* Espaço para o ícone customizado */
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Ícone de "check" customizado antes de cada item da lista */
+.pilar-secao li::before {
+    content: '✓'; /* Você pode trocar por '•' ou '→' */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* --- Botão (Link) Específico dos Pilares --- */
+.btn-pilar {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 12px 25px;
+    margin-top: 15px;
+    background-color: #f1f1f1; /* Cor de botão secundário/neutro */
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* =================================================== */
+/* ============== CORES ESPECÍFICAS DE CADA PILAR ============== */
+/* =================================================== */
+
+/* --- 1. Corpo em Movimento (Azul) --- */
+.corpo-movimento { border-left-color: var(--cor-azul-principal); }
+.corpo-movimento h2 { color: var(--cor-azul-principal); }
+.corpo-movimento .chamativo { border-left-color: var(--cor-azul-principal); }
+.corpo-movimento li::before { color: var(--cor-azul-principal); }
+.corpo-movimento .btn-pilar:hover {
+    background-color: var(--cor-azul-principal);
+    color: white;
+}
+
+/* --- 2. Nutrição Consciente (Verde) --- */
+.nutricao-consciente { border-left-color: var(--cor-verde-principal); }
+.nutricao-consciente h2 { color: var(--cor-verde-principal); }
+.nutricao-consciente .chamativo { border-left-color: var(--cor-verde-principal); }
+.nutricao-consciente li::before { color: var(--cor-verde-principal); }
+.nutricao-consciente .btn-pilar:hover {
+    background-color: var(--cor-verde-principal);
+    color: white;
+}
+
+/* --- 3. Mente em Equilíbrio (Azul Escuro/Logo) --- */
+.mente-equilibrio { border-left-color: var(--cor-texto-logo); }
+.mente-equilibrio h2 { color: var(--cor-texto-logo); }
+.mente-equilibrio .chamativo { border-left-color: var(--cor-texto-logo); }
+.mente-equilibrio li::before { color: var(--cor-texto-logo); }
+.mente-equilibrio .btn-pilar:hover {
+    background-color: var(--cor-texto-logo);
+    color: white;
+}

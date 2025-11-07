@@ -1,0 +1,147 @@
+.pagina-cabecalho {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.pagina-cabecalho h1 {
+    color: var(--cor-texto-logo);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.pagina-cabecalho .subtitulo-pagina {
+    font-size: 1.2em;
+    color: var(--cor-texto-paragrafo);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Destaque do Kit (Newsletter) --- */
+.recurso-destaque {
+    display: flex;
+    gap: 40px;
+    background-color: var(--cor-fundo-offwhite);
+    padding: 40px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.recurso-destaque-texto {
+    flex: 2; /* Ocupa 2/3 do espaço */
+}
+
+.recurso-destaque-form {
+    flex: 1; /* Ocupa 1/3 do espaço */
+    background-color: var(--cor-fundo-branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-padrao);
+}
+
+.recurso-destaque-form h3 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--cor-texto-logo);
+}
+
+.recurso-destaque-form .input-group {
+    margin-bottom: 15px;
+}
+
+.recurso-destaque-form .btn {
+    width: 100%;
+}
+
+.recurso-destaque-texto ul {
+    list-style: none;
+    padding-left: 0;
+}
+.recurso-destaque-texto li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.recurso-destaque-texto .icone-check {
+    color: var(--cor-verde-principal);
+    margin-right: 10px;
+}
+
+/* --- Grid de Downloads Rápidos --- */
+.outros-recursos {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.card-recurso {
+    background-color: var(--cor-fundo-branco);
+    border-radius: 8px;
+    box-shadow: var(--sombra-padrao);
+    overflow: hidden; /* Garante que a imagem se ajuste */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-recurso img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Faz a imagem cobrir o espaço */
+}
+
+.card-recurso-conteudo {
+    padding: 20px;
+    flex-grow: 1; /* Faz o card crescer para preencher o espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-recurso-conteudo h4 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: var(--cor-texto-logo);
+}
+
+.card-recurso-conteudo p {
+    flex-grow: 1; /* Empurra o botão para o final */
+}
+
+.card-recurso .btn-pilar {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: var(--cor-azul-principal);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.card-recurso .btn-pilar:hover {
+    background-color: var(--cor-texto-logo);
+}
+
+/* --- Responsividade para Recursos --- */
+@media (max-width: 900px) {
+    .recurso-destaque {
+        flex-direction: column;
+    }
+    .recursos-grid {
+        grid-template-columns: 1fr 1fr; /* 2 colunas */
+    }
+}
+
+@media (max-width: 600px) {
+    .recursos-grid {
+        grid-template-columns: 1fr; /* 1 coluna */
+    }
+    .recurso-destaque {
+        padding: 20px;
+    }
+}

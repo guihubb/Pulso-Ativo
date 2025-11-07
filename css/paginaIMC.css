@@ -164,3 +164,74 @@
   /* Texto vermelho escuro */
   border: 1px solid #f5c6cb;
 }
+
+/* ==================================================
+  INÍCIO DA RESPONSIVIDADE (AS TRÊS TELAS)
+==================================================
+*/
+
+/* TELA 1: Desktop (Base - 1024px e acima)
+  Seu código CSS original (sem media queries) 
+  já define a base. O 'max-width: 1000px'
+  no '.container-imc' cuida disso.
+  Ele será aplicado para tudo acima de 1023px.
+*/
+
+
+/* TELA 2: Tablets (Telas médias)
+  Para telas com largura máxima de 1023px.
+  Neste ponto, o layout de 1000px ainda cabe.
+  Apenas reduzimos os espaçamentos principais.
+*/
+@media (max-width: 1023px) {
+  .container-imc {
+    /* Reduz o padding vertical (de 60px para 40px) */
+    padding: 40px 15px;
+    /* Reduz o espaço entre os cards (de 40px para 20px) */
+    gap: 20px;
+  }
+}
+
+
+/* TELA 3: Smartphones (Telas pequenas)
+  Para telas com largura máxima de 768px.
+  Aqui, forçamos os itens a empilhar.
+*/
+@media (max-width: 768px) {
+  .container-imc {
+    /* Força o empilhamento vertical */
+    flex-direction: column;
+    /* Reduz ainda mais o padding para telas pequenas */
+    padding: 30px 10px;
+  }
+
+  .calculadora-box,
+  .tabela-imc-box {
+    /* Como os itens estão empilhados, 
+      o 'min-width' não é mais necessário. */
+    min-width: unset;
+  }
+
+  /* Ajustes finos de texto e botões no mobile */
+  .calculadora-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .botoesImc {
+    /* Faz os botões empilharem no celular
+      para não ficarem espremidos lado a lado */
+    flex-direction: column;
+  }
+
+  .btn {
+    /* Garante que os botões (que agora estão
+       empilhados) ocupem 100% da largura */
+    width: 100%;
+  }
+
+  .tabela-imc-box th,
+  .tabela-imc-box td {
+    /* Reduz o padding da tabela em telas pequenas */
+    padding: 10px;
+  }
+}

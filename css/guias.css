@@ -1,0 +1,129 @@
+/* =================================================== */
+/* ============== ESTILOS DA PÁGINA GUIAS ============== */
+/* =================================================== */
+
+.containersPaiGuias {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+  /* Define uma largura máxima para o conteúdo 
+     em telas de desktop */
+  max-width: 800px; 
+  margin: 0 auto; /* Centraliza o container */
+}
+
+.cardGuias {
+  /* No Desktop, o card terá uma largura fixa */
+  width: 700px;
+  /* IMPORTANTE: 
+    A altura deve ser 'auto' para se ajustar
+    ao conteúdo (imagem + texto). 
+    NUNCA use uma altura fixa como '1000px'.
+  */
+  height: auto;
+  box-shadow: var(--sombra-padrao);
+  border-radius: 8px;
+  overflow: hidden; /* Para a imagem se ajustar às bordas */
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.cardGuias img {
+  width: 100%;
+  /* Garante que a imagem não distorça */
+  object-fit: cover; 
+  /* Adiciona uma borda inferior na imagem */
+  border-bottom: 1px solid #eee;
+}
+
+.cardGuias h3,
+.cardGuias p,
+.cardGuias h4 {
+  /* Adiciona preenchimento para o texto */
+  padding: 10px 20px;
+}
+
+.cardGuias h3 {
+  font-size: 1.5em;
+  color: var(--cor-texto-logo);
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.cardGuias p {
+  font-size: 1em;
+  color: var(--cor-texto-paragrafo);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.cardGuias h4 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.cardGuias a {
+  color: var(--cor-verde-principal);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cardGuias a:hover {
+  color: var(--cor-azul-principal);
+}
+
+
+/* ==================================================
+  INÍCIO DA RESPONSIVIDADE (AS TRÊS TELAS)
+==================================================
+*/
+
+/* TELA 1: Desktop (Base - 1024px e acima)
+  O CSS acima (com 'width: 700px') já 
+  define a aparência para telas largas.
+*/
+
+
+/* TELA 2: Tablets (Telas médias)
+  Para telas com largura máxima de 1023px.
+*/
+@media (max-width: 1023px) {
+  .containersPaiGuias {
+    /* Reduz o padding em tablets */
+    padding: 30px 15px;
+  }
+  
+  .cardGuias {
+    /* Faz o card ocupar 90% da tela do tablet
+       em vez dos 700px fixos. */
+    width: 90%;
+  }
+}
+
+
+/* TELA 3: Smartphones (Telas pequenas)
+  Para telas com largura máxima de 768px.
+*/
+@media (max-width: 768px) {
+  .containersPaiGuias {
+    /* Reduz ainda mais o padding */
+    padding: 20px 10px;
+    gap: 20px; /* Menos espaço entre os cards */
+  }
+
+  .cardGuias {
+    /* Faz o card ocupar quase 100% da tela */
+    width: 95%;
+  }
+
+  /* Ajusta fontes para melhor leitura no celular */
+  .cardGuias h3 {
+    font-size: 1.3em;
+  }
+  .cardGuias p {
+    font-size: 0.95em;
+  }
+}
