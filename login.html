@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/loginECadastro.css">
+    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/jpg">
+    <title>Login - Pulso Ativo</title>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./img/logo.jpg" alt="logo" class="logo">
+        </div>
+
+        <nav class="navegacao-principal">
+            <a href="./home.html">Home</a>
+            <a href="./guias.html">Guias & Artigos</a>
+            <a href="./pilares.html">Pilares do Bem-Estar</a>
+            <a href="./recursos.html">Recursos Gratuitos</a>
+            <a href="./imc.html">Calculadora IMC</a>
+            <a href="./suplementos.html">Suplementos</a>
+            <a href="./sobre.html">Sobre Pulso Ativo</a>
+            <a href="./contato.html">Contato</a>
+        </nav>
+
+        <div class="login-container">
+            <a href="./login.html" class="login-link">Login ou cadastro</a>
+        </div>
+
+        <button onclick="cliqueMenuHamburguer()" class="btn-mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navegacao-principal-mobile">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./guias.html">Guias & Artigos</a></li>
+                <li><a href="./pilares.html">Pilares do Bem-Estar</a></li>
+                <li><a href="./recursos.html">Recursos Gratuitos</a></li>
+                <li><a href="./imc.html">Calculadora IMC</a></li>
+                <li><a href="./suplementos.html">Suplementos</a></li>
+                <li><a href="./sobre.html">Sobre Pulso Ativo</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-central">
+        <div class="login-card">
+            <h2>Cadastre-se</h2>
+
+            <div id="resultado-login">
+            </div>
+
+            <form id="form-cadastro">
+                <div class="input-group">
+                    <label for="inputNome">Nome:</label>
+                    <input type="text" id="inputNome" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="inputEmail">Seu melhor e-mail:</label>
+                    <input type="email" id="inputEmail" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="DtaNasc">Data de Nascimento:</label>
+                    <input type="date" id="DtaNasc">
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Crie uma senha:</label>
+                    <input type="password" id="senha" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmar-senha">Confirme a sua senha:</label>
+                    <input type="password" id="confirmar-senha" required>
+                </div>
+
+                <button type="submit" class="btn">Enviar Cadastro</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="rodapeConteudo">
+            <div>
+                <img src="./img/logoFooterSemFundo.png" alt="logo" style="width: 200px;">
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./guias.html">Artigos</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="./suplementos.html">Suplementos</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Junte-se a Nós</h3>
+                <p>Receba dicas exclusivas no seu e-mail.</p>
+            </div>
+        </div>
+        <div class="rodapeInferior">
+            <p>© 2025 Pulso Ativo. Todos os direitos reservados. │ Política de Privacidade │ Termos de Uso </p>
+        </div>
+    </footer>
+    <script src="./js/menuHamburguer.js"></script>
+    <script src="./js/loginRodape.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/salvarNomeUserPerfil.js"></script>
+    <script src="./js/salvarNomeUserHome.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+.pagina-cabecalho {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.pagina-cabecalho h1 {
+    color: var(--cor-texto-logo);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.pagina-cabecalho .subtitulo-pagina {
+    font-size: 1.2em;
+    color: var(--cor-texto-paragrafo);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Grid de 2 Colunas (Formulário | Info) --- */
+.contato-grid {
+    display: grid;
+    /* O formulário ocupa 2 partes, a info 1 parte */
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* --- Coluna 1: Formulário --- */
+.contato-formulario h2 {
+    margin-top: 0;
+    color: var(--cor-texto-logo);
+}
+
+/* Reutiliza o estilo de input que já definimos */
+.input-group {
+    margin-bottom: 20px;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--cor-texto-paragrafo);
+}
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit; /* Garante que a fonte seja a mesma do body */
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-azul-principal);
+    box-shadow: 0 0 8px rgba(94, 171, 196, 0.4);
+}
+
+.input-group textarea {
+    resize: vertical; /* Permite redimensionar só na vertical */
+    min-height: 120px;
+}
+
+/* Estilo do Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+.checkbox-group label {
+    margin: 0;
+    font-weight: normal;
+}
+.checkbox-group a {
+    color: var(--cor-azul-principal);
+    text-decoration: none;
+}
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+/* Botão do formulário */
+.contato-formulario .btn {
+    width: 100%;
+    font-size: 1.1em;
+}
+
+
+/* --- Coluna 2: Informações de Contato --- */
+.contato-info {
+    background-color: var(--cor-fundo-offwhite);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contato-info h3 {
+    margin-top: 0;
+    color: var(--cor-texto-logo);
+    border-bottom: 2px solid var(--cor-verde-principal);
+    padding-bottom: 10px;
+}
+
+.info-bloco {
+    margin-bottom: 25px;
+}
+.info-bloco strong {
+    font-size: 1.1em;
+    color: #333;
+}
+.info-bloco p {
+    margin: 5px 0 10px 0;
+}
+.info-bloco a {
+    color: var(--cor-azul-principal);
+    font-weight: bold;
+    text-decoration: none;
+}
+.info-bloco a:hover {
+    text-decoration: underline;
+}
+.social-links a {
+    margin-right: 15px;
+    font-size: 1.1em;
+}
+
+/* ==================================================
+  INÍCIO DA RESPONSIVIDADE (AS TRÊS TELAS)
+==================================================
+*/
+
+/* TELA 1: Desktop (Base - 1024px e acima)
+  Seu código original (sem media queries) 
+  com 'grid-template-columns: 2fr 1fr'
+  já define a base para telas largas.
+*/
+
+
+/* TELA 2: Tablets (Telas médias)
+  Para telas com largura máxima de 1023px.
+  O layout de 2 colunas ainda é mantido,
+  mas reduzimos os espaçamentos e fontes.
+*/
+@media (max-width: 1023px) {
+  .contato-grid {
+    /* Reduz o espaço entre as colunas do formulário e info */
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  /* Ajusta fontes do cabeçalho */
+  .pagina-cabecalho {
+    margin: 30px auto;
+  }
+  .pagina-cabecalho h1 {
+    font-size: 2.5em; /* Um pouco menor */
+  }
+  .pagina-cabecalho .subtitulo-pagina {
+    font-size: 1.1em;
+  }
+}
+
+
+/* TELA 3: Smartphones (Telas pequenas)
+  Para telas com largura máxima de 768px.
+  Aqui, forçamos o layout a empilhar.
+*/
+@media (max-width: 768px) {
+  .contato-grid {
+    /* PONTO PRINCIPAL:
+      Muda o grid de 2 colunas para 1 coluna
+    */
+    grid-template-columns: 1fr;
+    
+    /* Espaço entre o formulário e o info (agora empilhados) */
+    gap: 30px; 
+  }
+
+  /* Ajustes finos de fonte e padding no mobile */
+  .pagina-cabecalho {
+    margin: 20px auto;
+  }
+  .pagina-cabecalho h1 {
+    font-size: 2.1em; /* Menor para celular */
+  }
+  .pagina-cabecalho .subtitulo-pagina {
+    font-size: 1em;
+  }
+
+  .contato-info {
+    /* Reduz o padding interno no mobile */
+    padding: 20px;
+  }
+
+  /* Faz o checkbox quebrar a linha se ficar
+     muito apertado */
+  .checkbox-group {
+    align-items: flex-start;
+  }
+  .checkbox-group label {
+    line-height: 1.4;
+  }
+}

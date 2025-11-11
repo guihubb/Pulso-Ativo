@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contato.css">
+    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/jpg">
+    <title>Contato - Pulso Ativo</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./img/logo.jpg" alt="logo" class="logo">
+        </div>
+
+        <nav class="navegacao-principal">
+            <a href="./home.html">Home</a>
+            <a href="./guias.html">Guias & Artigos</a>
+            <a href="./pilares.html">Pilares do Bem-Estar</a>
+            <a href="./recursos.html">Recursos Gratuitos</a>
+            <a href="./imc.html">Calculadora IMC</a>
+            <a href="./suplementos.html">Suplementos</a>
+            <a href="./sobre.html">Sobre Pulso Ativo</a>
+            <a href="./contato.html">Contato</a>
+        </nav>
+
+        <div class="login-container">
+            <a href="./login.html" class="login-link">Login ou cadastro</a>
+        </div>
+
+        <button onclick="cliqueMenuHamburguer()" class="btn-mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navegacao-principal-mobile">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./guias.html">Guias & Artigos</a></li>
+                <li><a href="./pilares.html">Pilares do Bem-Estar</a></li>
+                <li><a href="./recursos.html">Recursos Gratuitos</a></li>
+                <li><a href="./imc.html">Calculadora IMC</a></li>
+                <li><a href="./suplementos.html">Suplementos</a></li>
+                <li><a href="./sobre.html">Sobre Pulso Ativo</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container-principal">
+
+            <header class="pagina-cabecalho">
+                <h1>Fale Conosco</h1>
+                <p class="subtitulo-pagina">Tem alguma dúvida, sugestão, ou quer apenas compartilhar sua história?
+                    Estamos aqui para ouvir você.</p>
+            </header>
+
+            <div class="contato-grid">
+
+                <section class="contato-formulario">
+                    <h2>Envie sua Mensagem</h2>
+                    <p>Preencha o formulário abaixo e nossa equipe responderá o mais breve possível.</p>
+
+                    <form id="form-contato">
+                        <div class="input-group">
+                            <label for="contato-nome">Seu nome completo:</label>
+                            <input type="text" id="contato-nome" name="nome" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contato-email">Seu melhor e-mail:</label>
+                            <input type="email" id="contato-email" name="email" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contato-assunto">Qual o motivo do contato?</label>
+                            <select id="contato-assunto" name="assunto" required>
+                                <option value="" disabled selected>-- Escolha uma opção --</option>
+                                <option value="duvida">Dúvida sobre um artigo</option>
+                                <option value="parceria">Proposta de Parceria</option>
+                                <option value="feedback">Feedback ou Sugestão</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contato-mensagem">Sua mensagem:</label>
+                            <textarea id="contato-mensagem" name="mensagem" rows="6" required></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="contato-termos" name="termos" required>
+                            <label for="contato-termos">Eu li e aceito a <a href="./privacidade.html">Política de
+                                    Privacidade</a> do site.</label>
+                        </div>
+
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </section>
+
+                <aside class="contato-info">
+                    <h3>Outros Canais</h3>
+                    <p>Você também pode nos encontrar aqui:</p>
+
+                    <div class="info-bloco">
+                        <strong>E-mail Direto</strong>
+                        <p>Para parcerias ou questões urgentes, envie um e-mail para:</p>
+                        <a href="mailto:contato@pulsoativo.com">contato@pulsoativo.com</a>
+                    </div>
+
+                    <div class="info-bloco">
+                        <strong>Redes Sociais</strong>
+                        <p>Siga-nos para dicas diárias e inspiração:</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank">Instagram</a>
+                            <a href="#" target="_blank">Pinterest</a>
+                            <a href="#" target="_blank">YouTube</a>
+                        </div>
+                    </div>
+
+                    <div class="info-bloco">
+                        <strong>Nossa Promessa</strong>
+                        <p>Lemos todas as mensagens e nos esforçamos para responder em até 48 horas úteis. Sua opinião é
+                            fundamental para o Pulso Ativo!</p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+    <footer class="rodape">
+        <div class="rodapeConteudo">
+            <div>
+                <img src="./img/logoFooterSemFundo.png" alt="logo" style="width: 200px;">
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./guias.html">Artigos</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="./suplementos.html">Suplementos</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Junte-se a Nós</h3>
+                <p>Receba dicas exclusivas no seu e-mail.</p>
+            </div>
+        </div>
+        <div class="rodapeInferior">
+            <p>© 2025 Pulso Ativo. Todos os direitos reservados. │ Política de Privacidade │ Termos de Uso </p>
+        </div>
+    </footer>
+    <script src="./js/menuHamburguer.js"></script>
+    <script src="./js/loginRodape.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/salvarNomeUserPerfil.js"></script>
+    <script src="./js/salvarNomeUserHome.js"></script>
+    <script src="./js/redirecionamentoContato.js"></script>
+    <script src="./js/agradecimentoContato.js"></script>
+</body>
+
+</html>

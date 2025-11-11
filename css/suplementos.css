@@ -1,0 +1,136 @@
+.containerPaiSuplemento{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.cardSuplemento{
+  width: 700px;
+  height: 1000px;
+  /*max-width: 350px;*/
+  box-shadow: var(--sombra-padrao);
+  border-radius: 8px;
+  overflow: hidden;
+  /* Garante que a imagem não saia da borda arredondada */
+  text-align: left;
+}
+.cardSuplemento img{
+  width: 100%;
+}
+
+.cardSuplemento a{
+  margin-left: 15px;
+}
+
+/*.cardSuplemento {
+  width: 100%;
+}*/
+
+.cardSuplemento h3,
+.cardSuplemento p {
+  padding: 0 15px 15px 15px;
+}
+
+
+.containersPaiGuias{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.cardGuias{
+  width: 700px;
+  height: 1000px;
+  box-shadow: var(--sombra-padrao);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.cardGuias a{
+  color: var(--cor-verde-principal);
+  text-decoration: none;
+}
+
+.cardGuias a:hover{
+  color: var(--cor-azul-principal);
+}
+
+/*//////////////////*/
+#saudacao-clicavel{
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+
+#saudacao-clicavel a:hover{
+  color: var(--cor-azul-principal);
+}
+
+/* ==================================================
+  INÍCIO DA RESPONSIVIDADE (AS TRÊS TELAS)
+==================================================
+*/
+
+/* TELA 1: Desktop (Base)
+  Seu código CSS original (sem media queries) 
+  já define a base com 'width: 700px'.
+  Ele se aplica a qualquer tela maior que 768px.
+*/
+
+
+/* TELA 2: Tablets (Telas médias)
+  Para telas com largura máxima de 768px
+*/
+@media (max-width: 768px) {
+  .cardSuplemento,
+  .cardGuias {
+    /* Em vez de 700px fixo, o card agora terá 90%
+      da largura da tela, permitindo que ele encolha.
+    */
+    width: 90%;
+    
+    /* IMPORTANTE: 
+      Garante que a altura se ajuste ao conteúdo
+      (caso não tenha mudado no código original).
+    */
+    height: auto; 
+  }
+}
+
+
+/* TELA 3: Smartphones (Telas pequenas)
+  Para telas com largura máxima de 480px
+*/
+@media (max-width: 480px) {
+  /* Em telas muito pequenas, é bom reduzir os espaços */
+  .containerPaiSuplemento,
+  .containersPaiGuias {
+    padding: 10px; /* Menos preenchimento nas laterais */
+    gap: 20px;     /* Menos espaço entre os cards */
+  }
+
+  .cardSuplemento,
+  .cardGuias {
+    /* O card ocupa quase toda a tela (95%)
+      para maximizar o espaço de leitura.
+    */
+    width: 95%;
+  }
+
+  /* Opcional: Ajustar fontes para melhor legibilidade */
+  .cardSuplemento h3 {
+    font-size: 1.3rem; /* Um pouco menor em telas pequenas */
+  }
+
+  .cardSuplemento p {
+    font-size: 0.95rem;
+  }
+}

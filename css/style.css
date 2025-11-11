@@ -1,0 +1,500 @@
+/* =================================================== */
+/* ============== 1. ESTILOS GERAIS E VARIÁVEIS ============== */
+/* =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --cor-verde-principal: #96D2B4;
+  --cor-azul-principal: #5EABC4;
+  --cor-texto-logo: #003D4F;
+  --cor-fundo-branco: #FFFFFF;
+  --cor-fundo-offwhite: #F8F9FA;
+  --cor-texto-paragrafo: #495057;
+  --sombra-padrao: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--cor-texto-paragrafo);
+}
+
+#saudacao-clicavel{
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+
+hr {
+  display: none;
+  /* Vamos usar margens em vez de <hr> */
+}
+
+/* Garante que o html e o body ocupem a altura total */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh; /* Altura mínima de 100% da tela */
+    display: flex;
+    flex-direction: column; /* Organiza os filhos (header, main, footer) em coluna */
+}
+
+/* ESTA É A LINHA MÁGICA:
+  Diz ao <main> para "crescer" e ocupar todo o espaço 
+  disponível, empurrando o <footer> para baixo.
+*/
+main {
+    flex-grow: 1;
+}
+
+/* BÔNUS: Garantir que o footer tenha 100% de largura.
+  (O Flexbox em coluna já faz isso, mas não custa garantir)
+*/
+footer.rodape {
+    width: 100%;
+    flex-shrink: 0; /* Impede que o footer encolha */
+}
+
+
+/* =================================================== */
+/* ============== 2. ESTILOS DO DESKTOP ============== */
+/* =================================================== */
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--cor-fundo-branco);
+  box-shadow: var(--sombra-padrao);
+}
+
+.logo {
+  width: 200px;
+}
+
+.navegacao-principal a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--cor-texto-logo);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navegacao-principal a:hover {
+  color: var(--cor-azul-principal);
+}
+
+.navegacao-principal-mobile {
+  display: none;
+}
+
+.login-link {
+  
+  text-decoration: none;
+  color: var(--cor-azul-principal);
+  font-weight: bold;
+}
+
+.btn-mobile {
+  display: none;
+  /* Escondido no desktop */
+}
+
+.container-principal{
+  padding: 10px 60px;
+}
+
+/* --- Seções com colunas (texto e imagem, pilares) --- */
+#textoComImagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 30px;
+}
+
+#textoComImagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* --- Botão Principal --- */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--cor-azul-principal);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: var(--cor-texto-logo);
+  transition: all 0.3s;
+}
+
+.btn-rodape{
+  width: 20px;
+  height: 20px;
+  padding: 15px 30px;
+  background-color: var(--cor-azul-principal);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.btn-rodape:hover {
+  background-color: var(--cor-texto-logo);
+  transition: all 0.3s;
+}
+
+/* --- Seção de Cards --- */
+.containersPai {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.card {
+  width: 30%;
+  max-width: 350px;
+  box-shadow: var(--sombra-padrao);
+  border-radius: 8px;
+  overflow: hidden;
+  /* Garante que a imagem não saia da borda arredondada */
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h3,
+.card p {
+  padding: 0 15px 15px 15px;
+}
+
+.card a{
+  color: var(--cor-verde-principal);
+  text-decoration: none;
+  padding: 0 15px 15px 15px;
+  transition: all 0.3s;
+}
+.card a:hover{
+  color: var(--cor-azul-principal);
+}
+
+/* --- Rodapé --- */
+.rodape {
+  background-color: var(--cor-texto-logo);
+  color: var(--cor-fundo-branco);
+  padding: 40px 20px 0;
+}
+
+.rodapeConteudo {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.rodapeConteudo h3 {
+  color: var(--cor-verde-principal);
+}
+
+.rodapeConteudo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rodapeConteudo a {
+  text-decoration: none;
+  color: var(--cor-fundo-branco);
+  transition: color 0.3s;
+}
+
+.rodapeConteudo a:hover {
+  color: var(--cor-verde-principal);
+}
+
+.rodapeInferior {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--cor-texto-paragrafo);
+  font-size: 14px;
+}
+
+
+/* =================================================== */
+/* ============== 3. ESTILOS RESPONSIVOS (MOBILE) ============== */
+/* =================================================== */
+
+@media (max-width: 900px) {
+  /* Ponto de quebra para tablets e celulares */
+
+  /* --- Header e Menu Mobile --- */
+  header {
+    position: relative;
+    /* Necessário para o menu dropdown */
+  }
+
+  .navegacao-principal {
+    display: none;
+    /* Esconde o menu de desktop */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    /* Começa logo abaixo do header */
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo-branco);
+    box-shadow: var(--sombra-padrao);
+  }
+
+  .navegacao-principal.active {
+    display: flex;
+    /* Mostra o menu quando o JS adicionar a classe 'active' */
+  }
+
+  .navegacao-principal a {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  #imagemHome{
+    display: none;
+  }
+
+  .login-container {
+    display: none;
+    /* Esconde o botão de login separado */
+  }
+
+  .btn-mobile {
+    display: flex;
+    /* MOSTRA o botão hambúrguer */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-mobile span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-texto-logo);
+  }
+
+  /* --- Seções com colunas --- */
+  #textoComImagem {
+    flex-direction: column;
+    /* Colunas viram linhas */
+    text-align: center;
+  }
+
+  #textoComImagem div {
+    margin-left: 0 !important;
+    /* Sobrescreve o estilo inline */
+  }
+
+  /* --- Seção de Cards --- */
+  .containersPai {
+    flex-direction: column;
+    /* Empilha os cards */
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    /* Ocupa a largura quase toda */
+  }
+
+  /* --- Rodapé --- */
+  .rodapeConteudo {
+    flex-direction: column;
+    /* Empilha as colunas */
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+}
+
+/* =================================================== */
+/* ============== ESTILOS DO MENU MOBILE ============== */
+/* =================================================== */
+
+/* Por padrão, o botão hambúrguer fica escondido em telas grandes (desktop) */
+.btn-mobile {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para as 3 barrinhas do ícone hambúrguer */
+.btn-mobile span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #003D4F;
+  /* Cor das barras */
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* O menu mobile também fica escondido por padrão */
+.navegacao-principal-mobile {
+  display: none;
+}
+
+
+/* Media Query: Aplica estes estilos APENAS em telas pequenas */
+@media (max-width: 900px) {
+
+  /* Em telas pequenas, escondemos a navegação de desktop */
+  .navegacao-principal,
+  .login-container {
+    display: none;
+  }
+
+  /* E MOSTRAMOS o botão hambúrguer */
+  .btn-mobile {
+    display: block;
+  }
+
+  /* Estilo para o menu quando ele estiver fechado (redundante, mas bom para clareza) */
+  .navegacao-principal-mobile {
+    display: none;
+    position: absolute;
+    top: 70px;
+    /* Ajuste para a altura do seu header */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Garante que o menu fique por cima de outros conteúdos */
+  }
+
+  /* Limpa o estilo da lista para o menu mobile */
+  .navegacao-principal-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Estilo para os links dentro do menu mobile */
+  .navegacao-principal-mobile a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #003D4F;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navegacao-principal-mobile.active {
+    display: block;
+  }
+
+  .btn-mobile.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .btn-mobile.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .btn-mobile.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+/*=============================================
+============ SUPLEMENTOS ======================
+==============================================*/
+
+
+/*==================================
+========= PAGINA USER ==============
+==================================*/
+#container-perfil{
+  display: block;
+}
+#container-info-user{
+  text-align: center;
+  box-shadow: var(--sombra-padrao);
+  width: 500px;
+  height: 300px;
+}
+
+
+/* =================================================== */
+/* ============== ESTILOS DA PÁGINA "PILARES" ============== */
+/* =================================================== */
+
+
+
+
+
+/* =================================================== */
+/* ============== AJUSTES PARA CELULAR ============== */
+/* =================================================== */
+@media (max-width: 768px) {
+    .container-principal {
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+    .container-principal h1 {
+        font-size: 2.2em;
+    }
+    .subtitulo-pagina {
+        margin-bottom: 30px;
+    }
+    .pilar-secao {
+        padding: 20px;
+    }
+    .pilar-secao h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* =================================================== */
+/* ============== ESTILOS DA PÁGINA "RECURSOS" ============== */
+/* =================================================== */
+
+
+/* =================================================== */
+/* ============== ESTILOS DA PÁGINA "CONTATO" ============== */
+/* =================================================== */
+
+
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .contato-grid {
+        /* Empilha as colunas no celular */
+        grid-template-columns: 1fr;
+    }
+    .contato-info {
+        /* Muda a ordem, mas no seu HTML já está bom (form primeiro) */
+        margin-top: 30px;
+    }
+}

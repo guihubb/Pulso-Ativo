@@ -1,0 +1,237 @@
+/* =================================================== */
+/* ============== ESTILOS DA PÁGINA IMC ============== */
+/* =================================================== */
+
+.container-imc {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  /* Permite que os itens quebrem para a linha de baixo */
+}
+
+.calculadora-box,
+.tabela-imc-box {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--sombra-padrao);
+  flex: 1;
+  /* Faz com que ambos tentem ocupar o mesmo espaço */
+  min-width: 300px;
+  /* Largura mínima antes de quebrar a linha */
+}
+
+.calculadora-box h1 {
+  margin-top: 0;
+  color: var(--cor-texto-logo);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.botoesImc {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--cor-azul-principal);
+  color: var(--cor-azul-principal);
+}
+
+.btn-outline:hover {
+  background-color: var(--cor-azul-principal);
+  color: white;
+}
+
+#resultadoImc {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: none;
+  /* Começa escondido */
+}
+
+/* Estilos para as cores do resultado */
+.normal {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.atencao {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.perigo {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+
+/* --- Tabela IMC --- */
+.tabela-imc-box table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Tira o espaço entre as células */
+}
+
+.tabela-imc-box th,
+.tabela-imc-box td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-imc-box th {
+  background-color: var(--cor-azul-principal);
+  color: white;
+}
+
+/* --- RESPONSIVIDADE PARA A PÁGINA IMC --- */
+@media (max-width: 768px) {
+  .container-imc {
+    flex-direction: column;
+    /* Empilha a calculadora e a tabela */
+    padding: 40px 20px;
+  }
+}
+
+
+/* =================================================== */
+/* ============== CORES DE FEEDBACK DO IMC ============== */
+/* =================================================== */
+
+#resultadoImc {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: none;
+  /* Começa escondido e o JS o exibe */
+  transition: all 0.3s;
+}
+
+/* Classe para resultado Normal (Verde) */
+.normal {
+  background-color: #d4edda;
+  /* Fundo verde claro */
+  color: #155724;
+  /* Texto verde escuro */
+  border: 1px solid #c3e6cb;
+}
+
+/* Classe para resultado de Atenção (Amarelo) */
+.atencao {
+  background-color: #fff3cd;
+  /* Fundo amarelo claro */
+  color: #856404;
+  /* Texto amarelo escuro */
+  border: 1px solid #ffeeba;
+}
+
+/* Classe para resultado de Perigo/Erro (Vermelho) */
+.perigo {
+  background-color: #f8d7da;
+  /* Fundo vermelho claro */
+  color: #721c24;
+  /* Texto vermelho escuro */
+  border: 1px solid #f5c6cb;
+}
+
+/* ==================================================
+  INÍCIO DA RESPONSIVIDADE (AS TRÊS TELAS)
+==================================================
+*/
+
+/* TELA 1: Desktop (Base - 1024px e acima)
+  Seu código CSS original (sem media queries) 
+  já define a base. O 'max-width: 1000px'
+  no '.container-imc' cuida disso.
+  Ele será aplicado para tudo acima de 1023px.
+*/
+
+
+/* TELA 2: Tablets (Telas médias)
+  Para telas com largura máxima de 1023px.
+  Neste ponto, o layout de 1000px ainda cabe.
+  Apenas reduzimos os espaçamentos principais.
+*/
+@media (max-width: 1023px) {
+  .container-imc {
+    /* Reduz o padding vertical (de 60px para 40px) */
+    padding: 40px 15px;
+    /* Reduz o espaço entre os cards (de 40px para 20px) */
+    gap: 20px;
+  }
+}
+
+
+/* TELA 3: Smartphones (Telas pequenas)
+  Para telas com largura máxima de 768px.
+  Aqui, forçamos os itens a empilhar.
+*/
+@media (max-width: 768px) {
+  .container-imc {
+    /* Força o empilhamento vertical */
+    flex-direction: column;
+    /* Reduz ainda mais o padding para telas pequenas */
+    padding: 30px 10px;
+  }
+
+  .calculadora-box,
+  .tabela-imc-box {
+    /* Como os itens estão empilhados, 
+      o 'min-width' não é mais necessário. */
+    min-width: unset;
+  }
+
+  /* Ajustes finos de texto e botões no mobile */
+  .calculadora-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .botoesImc {
+    /* Faz os botões empilharem no celular
+      para não ficarem espremidos lado a lado */
+    flex-direction: column;
+  }
+
+  .btn {
+    /* Garante que os botões (que agora estão
+       empilhados) ocupem 100% da largura */
+    width: 100%;
+  }
+
+  .tabela-imc-box th,
+  .tabela-imc-box td {
+    /* Reduz o padding da tabela em telas pequenas */
+    padding: 10px;
+  }
+}
