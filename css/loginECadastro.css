@@ -6,141 +6,163 @@
   Use este <main> em vez do <main> antigo.
 */
 .container-central {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    padding: 20px;
-    background-color: #f0f4f8; /* Fundo suave */
-    font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+  background-color: #f0f4f8;
+  /* Fundo suave */
+  font-family: sans-serif;
 }
 
 /* A CLASSE MÁGICA: Define o estilo do "card" 
   que será usado no formulário E no perfil.
 */
 .login-card {
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
 }
 
 /* --- Título do Card --- */
 .login-card h2 {
-    text-align: center;
-    color: var(--cor-texto-logo); /* Usando sua variável de cor */
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 2em;
+  text-align: center;
+  color: var(--cor-texto-logo);
+  /* Usando sua variável de cor */
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 2em;
 }
 
 /* --- Estilos do FORMULÁRIO --- */
 
 /* Agrupador de label + input */
 .input-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
-    display: block; /* Faz o label ocupar a linha inteira */
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--cor-texto-paragrafo);
+  display: block;
+  /* Faz o label ocupar a linha inteira */
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--cor-texto-paragrafo);
 }
 
 .input-group input[type="text"],
 .input-group input[type="email"],
 .input-group input[type="password"],
 .input-group input[type="date"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .input-group input:focus {
-    outline: none;
-    border-color: var(--cor-azul-principal);
-    box-shadow: 0 0 8px rgba(94, 171, 196, 0.4);
+  outline: none;
+  border-color: var(--cor-azul-principal);
+  box-shadow: 0 0 8px rgba(94, 171, 196, 0.4);
 }
 
 /* --- Estilos do Botão (Reaproveitando a classe .btn) --- */
 .btn {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: var(--cor-azul-principal);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--cor-azul-principal);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: var(--cor-texto-logo);
+  background-color: var(--cor-texto-logo);
 }
 
 
 /* --- Estilos do PERFIL --- */
 
 .perfil-info {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }
+
 .perfil-info strong {
-    font-size: 0.9rem;
-    color: #555;
+  font-size: 0.9rem;
+  color: #555;
 }
+
 .perfil-info p {
-    font-size: 1.2rem;
-    color: #000;
-    margin: 5px 0 0 0;
+  font-size: 1.2rem;
+  color: #000;
+  margin: 5px 0 0 0;
 }
 
 
-/* TELA 3: Smartphones (Telas pequenas)
-  Para telas com largura máxima de 480px.
-  Aqui sim fazemos ajustes finos.
-*/
-@media (max-width: 480px) {
-
-  /* Diminui o preenchimento do container geral */
+/* --- Tela Média --- */
+/* (Telas com 768px de largura ou menos) */
+@media (max-width: 1023px) {
   .container-central {
-    padding: 10px;
-    /* Remove a altura mínima para o formulário
-       ficar mais natural em telas curtas */
-    min-height: auto;
+    /* Aumenta a altura para preencher mais a tela do tablet */
+    min-height: 90vh; 
   }
-
+  
   .login-card {
-    /* Reduz o preenchimento interno do card
-       (padding: 30px 40px no original) 
-       para dar mais espaço ao formulário */
-    padding: 25px 20px;
+    /* Reduz um pouco o padding interno no tablet */
+    padding: 25px 30px;
   }
-
+  
   .login-card h2 {
-    /* Diminui um pouco o título principal */
-    font-size: 1.8em;
+    font-size: 1.8em; /* Diminui um pouco o título */
+  }
+}
+
+
+/* --- Tela Pequena (SMARTPHONES) --- */
+/* (Telas com 520px de largura ou menos) 
+   Usamos 520px porque seu card tem 500px de largura máxima.
+   Assim que a tela ficar menor que o card, aplicamos este estilo.
+*/
+@media (max-width: 768px) {
+  
+  .container-central {
+    /* O container não precisa mais centralizar verticalmente,
+       ele agora alinha o card no topo da tela. */
+    align-items: flex-start;
+    
+    /* Remove o padding e a cor de fundo, 
+       pois o card se tornará a própria tela */
+    padding: 0;
+    background-color: white;
+    min-height: 100vh;
+  }
+  
+  .login-card {
+    /* O card agora ocupa 100% da tela */
+    max-width: 100%;
+    
+    /* Remove a "aparência de card" para se fundir com a tela */
+    box-shadow: none;
+    border-radius: 0;
+    
+    /* Ajusta o padding para o celular */
+    padding: 30px 20px;
+  }
+  
+  .login-card h2 {
+    font-size: 1.6em; /* Título menor para o celular */
     margin-bottom: 25px;
-  }
-
-  .btn {
-    /* Botões com menos preenchimento vertical */
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  /* Ajusta os campos de perfil */
-  .perfil-info p {
-    font-size: 1.1rem;
   }
 }

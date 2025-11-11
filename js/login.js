@@ -5,6 +5,7 @@ const inpuitConfirmarSenha = document.querySelector('#confirmar-senha')
 const inputEmail = document.querySelector('#inputEmail')
 const resultadoLogin = document.querySelector('#resultado-login')
 const loginContainer = document.querySelector('.login-container')
+const loginMobile = document.querySelector('.login-container-mobile');
 
 function cadastroUser(evento){
     evento.preventDefault();
@@ -19,13 +20,12 @@ function cadastroUser(evento){
         inputEmail.value = '';
         inputSenha.value = '';
         inpuitConfirmarSenha.value = '';  
-        $("#resultado-login").html("<h3>Senhas diferentes. Digite novamente</h3>").show();
+        resultadoLogin.innerHTML = "<h3>Senhas diferentes. Digite novamente</h3>"
     } else{
-		$("#resultado-login").html("").hide();
         localStorage.setItem('nomeUsuario', nome)
         localStorage.setItem('emailUsuario', email)
         setTimeout(()=>{
-            window.location.replace('./index.html')
+            window.location.replace('./home.html')
         }, 2000)
         resultadoLogin.innerHTML = "<h3>Estamos te redirecionando. Aguarde alguns instantes...</h3>"
     }

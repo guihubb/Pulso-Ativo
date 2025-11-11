@@ -89,7 +89,7 @@
 /* TELA 2: Tablets (Telas médias)
   Para telas com largura máxima de 768px
 */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .cardSuplemento,
   .cardGuias {
     /* Em vez de 700px fixo, o card agora terá 90%
@@ -109,7 +109,7 @@
 /* TELA 3: Smartphones (Telas pequenas)
   Para telas com largura máxima de 480px
 */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   /* Em telas muito pequenas, é bom reduzir os espaços */
   .containerPaiSuplemento,
   .containersPaiGuias {

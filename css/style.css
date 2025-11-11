@@ -24,10 +24,34 @@ body {
   color: var(--cor-texto-paragrafo);
 }
 
-#saudacao-clicavel{
+/* Barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--cor-verde-principal);
+}
+
+#saudacao-clicavel {
   text-decoration: none;
   color: black;
   transition: all 0.3s;
+}
+
+.login-container a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+
+.login-container a:hover {
+  color: var(--cor-azul-principal);
 }
 
 hr {
@@ -37,13 +61,15 @@ hr {
 
 /* Garante que o html e o body ocupem a altura total */
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    min-height: 100vh; /* Altura mínima de 100% da tela */
-    display: flex;
-    flex-direction: column; /* Organiza os filhos (header, main, footer) em coluna */
+  min-height: 100vh;
+  /* Altura mínima de 100% da tela */
+  display: flex;
+  flex-direction: column;
+  /* Organiza os filhos (header, main, footer) em coluna */
 }
 
 /* ESTA É A LINHA MÁGICA:
@@ -51,20 +77,20 @@ body {
   disponível, empurrando o <footer> para baixo.
 */
 main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* BÔNUS: Garantir que o footer tenha 100% de largura.
   (O Flexbox em coluna já faz isso, mas não custa garantir)
 */
 footer.rodape {
-    width: 100%;
-    flex-shrink: 0; /* Impede que o footer encolha */
+  width: 100%;
+  flex-shrink: 0;
+  /* Impede que o footer encolha */
 }
 
-
 /* =================================================== */
-/* ============== 2. ESTILOS DO DESKTOP ============== */
+/* ============== 2. ESTILOS DO DESKTOP E GERAL ============== */
 /* =================================================== */
 
 /* --- Header --- */
@@ -97,11 +123,14 @@ header {
   display: none;
 }
 
-.login-link {
-  
+.login-container a {
   text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+
+.login-container a:hover {
   color: var(--cor-azul-principal);
-  font-weight: bold;
 }
 
 .btn-mobile {
@@ -109,7 +138,7 @@ header {
   /* Escondido no desktop */
 }
 
-.container-principal{
+.container-principal {
   padding: 10px 60px;
 }
 
@@ -138,12 +167,13 @@ header {
   border-radius: 5px;
   font-weight: bold;
 }
+
 .btn:hover {
   background-color: var(--cor-texto-logo);
   transition: all 0.3s;
 }
 
-.btn-rodape{
+.btn-rodape {
   width: 20px;
   height: 20px;
   padding: 15px 30px;
@@ -153,6 +183,7 @@ header {
   border-radius: 5px;
   font-weight: bold;
 }
+
 .btn-rodape:hover {
   background-color: var(--cor-texto-logo);
   transition: all 0.3s;
@@ -185,13 +216,14 @@ header {
   padding: 0 15px 15px 15px;
 }
 
-.card a{
+.card a {
   color: var(--cor-verde-principal);
   text-decoration: none;
   padding: 0 15px 15px 15px;
   transition: all 0.3s;
 }
-.card a:hover{
+
+.card a:hover {
   color: var(--cor-azul-principal);
 }
 
@@ -238,54 +270,26 @@ header {
 
 
 /* =================================================== */
-/* ============== 3. ESTILOS RESPONSIVOS (MOBILE) ============== */
+/* ============== RESPONSIVIDADE (TABLET) ============== */
+/* (Telas com 900px de largura ou menos) */
 /* =================================================== */
+@media (max-width: 1023px) {
 
-@media (max-width: 900px) {
-  /* Ponto de quebra para tablets e celulares */
-
-  /* --- Header e Menu Mobile --- */
-  header {
-    position: relative;
-    /* Necessário para o menu dropdown */
-  }
-
+  /* --- Header (Menu Hambúrguer) --- */
+  /* Esconde a navegação principal de desktop */
   .navegacao-principal {
-    display: none;
-    /* Esconde o menu de desktop */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    /* Começa logo abaixo do header */
-    left: 0;
-    width: 100%;
-    background-color: var(--cor-fundo-branco);
-    box-shadow: var(--sombra-padrao);
-  }
-
-  .navegacao-principal.active {
-    display: flex;
-    /* Mostra o menu quando o JS adicionar a classe 'active' */
-  }
-
-  .navegacao-principal a {
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-
-  #imagemHome{
     display: none;
   }
 
   .login-container {
     display: none;
-    /* Esconde o botão de login separado */
   }
 
+
+  /* Mostra o botão hambúrguer */
   .btn-mobile {
     display: flex;
-    /* MOSTRA o botão hambúrguer */
+    /* Usamos flex para centralizar as barrinhas */
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -298,203 +302,145 @@ header {
     width: 25px;
     height: 3px;
     background-color: var(--cor-texto-logo);
+    transition: all 0.3s ease-in-out;
   }
 
-  /* --- Seções com colunas --- */
+  /* --- Seção Hero (Texto + Imagem) --- */
   #textoComImagem {
     flex-direction: column;
-    /* Colunas viram linhas */
+    /* Empilha o texto e a imagem */
     text-align: center;
+    padding: 40px 20px;
   }
 
-  #textoComImagem div {
+  /* Remove a margem inline que estava no seu HTML */
+  #textoComImagem>div:first-child {
     margin-left: 0 !important;
-    /* Sobrescreve o estilo inline */
   }
 
   /* --- Seção de Cards --- */
   .containersPai {
-    flex-direction: column;
-    /* Empilha os cards */
-    align-items: center;
+    flex-wrap: wrap;
+    /* Permite que os cards quebrem a linha */
+    gap: 20px;
   }
 
   .card {
-    width: 90%;
-    /* Ocupa a largura quase toda */
+    /* Ocupa 48% para criar um layout de 2 colunas */
+    width: 48%;
+    max-width: 350px;
+    /* Mantém o max-width */
   }
 
   /* --- Rodapé --- */
   .rodapeConteudo {
     flex-direction: column;
-    /* Empilha as colunas */
+    /* Empilha as colunas do rodapé */
     align-items: center;
+    /* Centraliza tudo */
     text-align: center;
-    gap: 40px;
+    gap: 30px;
   }
 
-}
-
-/* =================================================== */
-/* ============== ESTILOS DO MENU MOBILE ============== */
-/* =================================================== */
-
-/* Por padrão, o botão hambúrguer fica escondido em telas grandes (desktop) */
-.btn-mobile {
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-/* Estilo para as 3 barrinhas do ícone hambúrguer */
-.btn-mobile span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #003D4F;
-  /* Cor das barras */
-  margin: 5px 0;
-  transition: all 0.3s ease-in-out;
-}
-
-/* O menu mobile também fica escondido por padrão */
-.navegacao-principal-mobile {
-  display: none;
-}
-
-
-/* Media Query: Aplica estes estilos APENAS em telas pequenas */
-@media (max-width: 900px) {
-
-  /* Em telas pequenas, escondemos a navegação de desktop */
-  .navegacao-principal,
-  .login-container {
-    display: none;
+  .rodapeConteudo div {
+    max-width: 400px;
+    /* Garante que os formulários, etc., não fiquem muito largos */
   }
-
-  /* E MOSTRAMOS o botão hambúrguer */
-  .btn-mobile {
-    display: block;
-  }
-
-  /* Estilo para o menu quando ele estiver fechado (redundante, mas bom para clareza) */
-  .navegacao-principal-mobile {
-    display: none;
-    position: absolute;
-    top: 70px;
-    /* Ajuste para a altura do seu header */
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    /* Garante que o menu fique por cima de outros conteúdos */
-  }
-
-  /* Limpa o estilo da lista para o menu mobile */
-  .navegacao-principal-mobile ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  /* Estilo para os links dentro do menu mobile */
-  .navegacao-principal-mobile a {
-    display: block;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #003D4F;
-    border-bottom: 1px solid #eee;
-  }
-
-  .navegacao-principal-mobile.active {
-    display: block;
-  }
-
-  .btn-mobile.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .btn-mobile.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .btn-mobile.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-}
-
-
-/*=============================================
-============ SUPLEMENTOS ======================
-==============================================*/
-
-
-/*==================================
-========= PAGINA USER ==============
-==================================*/
-#container-perfil{
-  display: block;
-}
-#container-info-user{
-  text-align: center;
-  box-shadow: var(--sombra-padrao);
-  width: 500px;
-  height: 300px;
 }
 
 
 /* =================================================== */
-/* ============== ESTILOS DA PÁGINA "PILARES" ============== */
-/* =================================================== */
-
-
-
-
-
-/* =================================================== */
-/* ============== AJUSTES PARA CELULAR ============== */
+/* ============== RESPONSIVIDADE (MOBILE) ============== */
+/* (Telas com 600px de largura ou menos) */
 /* =================================================== */
 @media (max-width: 768px) {
-    .container-principal {
-        margin-top: 20px;
-        padding: 0 15px;
-    }
-    .container-principal h1 {
-        font-size: 2.2em;
-    }
-    .subtitulo-pagina {
-        margin-bottom: 30px;
-    }
-    .pilar-secao {
-        padding: 20px;
-    }
-    .pilar-secao h2 {
-        font-size: 1.8em;
-    }
+
+  /* --- Ajustes Gerais --- */
+  .container-principal {
+    padding: 10px 15px;
+    /* Menos padding lateral */
+  }
+
+  #textoComImagem {
+    padding: 30px 15px;
+  }
+
+  /* --- Seção de Cards --- */
+  .containersPai {
+    flex-direction: column;
+    /* Força 1 coluna */
+    align-items: center;
+    /* Centraliza os cards */
+  }
+
+  .card {
+    /* Ocupa 95% da tela para um visual de 1 coluna */
+    width: 95%;
+    max-width: 350px;
+  }
+
+  /* --- Rodapé --- */
+  .rodape {
+    padding: 30px 15px 0;
+  }
 }
 
-/* =================================================== */
-/* ============== ESTILOS DA PÁGINA "RECURSOS" ============== */
-/* =================================================== */
-
 
 /* =================================================== */
-/* ============== ESTILOS DA PÁGINA "CONTATO" ============== */
+/* ============== LÓGICA DO MENU HAMBÚRGUER ============== */
+/* (Este CSS funciona com o JavaScript) */
 /* =================================================== */
 
+/* Estilo do menu mobile (escondido por padrão) */
+.navegacao-principal-mobile {
+  display: none;
+  /* Começa escondido */
+  position: absolute;
+  top: 70px;
+  /* Ajuste para a altura exata do seu header */
+  left: 0;
+  width: 100%;
+  background-color: var(--cor-fundo-branco);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* Garante que o menu fique por cima de tudo */
+}
 
+/* Quando o JS adiciona a classe 'active', o menu aparece! */
+.navegacao-principal-mobile.active {
+  display: block;
+}
 
-/* --- Responsividade --- */
-@media (max-width: 900px) {
-    .contato-grid {
-        /* Empilha as colunas no celular */
-        grid-template-columns: 1fr;
-    }
-    .contato-info {
-        /* Muda a ordem, mas no seu HTML já está bom (form primeiro) */
-        margin-top: 30px;
-    }
+/* Estilo para os links dentro do menu mobile */
+.navegacao-principal-mobile ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navegacao-principal-mobile li a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--cor-texto-logo);
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+}
+
+.navegacao-principal-mobile li a:hover {
+  background-color: #f8f9fa;
+}
+
+/* Animação do botão para virar um "X" quando ele tem a classe 'active' */
+.btn-mobile.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.btn-mobile.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.btn-mobile.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }

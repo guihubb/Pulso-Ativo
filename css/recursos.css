@@ -127,21 +127,64 @@
     background-color: var(--cor-texto-logo);
 }
 
-/* --- Responsividade para Recursos --- */
-@media (max-width: 990px) {
+/* =================================================== */
+/* ============== RESPONSIVIDADE (TABLET) ============== */
+/* Example breakpoint: 900px */
+/* =================================================== */
+@media (max-width: 1023px) {
+    
+    .pagina-cabecalho h1 {
+        font-size: 2.4em;
+    }
+
+    /* --- Destaque do Kit --- */
+    /* Em telas médias, o texto e o formulário ficam um sobre o outro */
     .recurso-destaque {
         flex-direction: column;
+        gap: 30px;
     }
+    
+    .recurso-destaque-form {
+        width: 100%;
+        max-width: 500px; /* Limita a largura do formulário */
+        margin: 0 auto;
+    }
+
+    /* --- Grid de Downloads --- */
+    /* Em telas médias, passamos de 3 para 2 colunas */
     .recursos-grid {
-        grid-template-columns: 1fr 1fr; /* 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 729px) {
-    .recursos-grid {
-        grid-template-columns: 1fr; /* 1 coluna */
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE (MOBILE) ============== */
+/* Example breakpoint: 600px */
+/* =================================================== */
+@media (max-width: 768px) {
+
+    .pagina-cabecalho {
+        margin: 20px auto 30px auto;
     }
+    .pagina-cabecalho h1 {
+        font-size: 2em;
+    }
+
+    /* --- Destaque do Kit --- */
+    /* Reduz o padding em telas bem pequenas */
     .recurso-destaque {
-        padding: 20px;
+        padding: 25px 20px;
+    }
+
+    /* --- Grid de Downloads --- */
+    /* Em telas pequenas, passamos de 2 para 1 coluna */
+    .recursos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-recurso img {
+        /* Aumenta a altura da imagem no layout de 1 coluna */
+        height: 200px; 
     }
 }

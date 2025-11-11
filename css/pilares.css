@@ -133,3 +133,59 @@
     background-color: var(--cor-texto-logo);
     color: white;
 }
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE (TABLET) ============== */
+/* =Examplebreakpoint: 768px*/
+/* =================================================== */
+@media (max-width: 1023px) {
+    .container-principal {
+        margin-top: 20px;
+        padding: 0 15px; /* Reduz o espaçamento lateral */
+    }
+    .container-principal h1 {
+        font-size: 2.4em; /* Reduz um pouco o título principal */
+    }
+    .pilar-secao {
+        padding: 25px; /* Reduz o padding interno dos cards */
+    }
+    .pilar-secao h2 {
+        font-size: 1.9em; /* Reduz o título dos cards */
+    }
+}
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE (MOBILE) ============== */
+/* Example breakpoint: 500px */
+/* =================================================== */
+@media (max-width: 768px) {
+    .container-principal h1 {
+        font-size: 2em; /* Reduz mais o título */
+        line-height: 1.2;
+    }
+    .subtitulo-pagina {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+    .pilar-secao {
+        padding: 20px 15px; /* Padding mínimo para telas pequenas */
+    }
+    .pilar-secao h2 {
+        font-size: 1.6em; /* Título bem legível no celular */
+    }
+    .pilar-secao h3 {
+        font-size: 1.2em;
+    }
+    .pilar-secao li {
+        padding-left: 25px; /* Reduz o espaço do ícone */
+        font-size: 1em; /* Tamanho de fonte padrão */
+    }
+    .chamativo {
+        padding: 15px;
+        font-size: 1em;
+    }
+    .btn-pilar {
+        padding: 10px 20px;
+        font-size: 1em; /* Botão com tamanho de fonte padrão */
+    }
+}
