@@ -25,7 +25,7 @@ function cadastroUser(evento){
         localStorage.setItem('nomeUsuario', nome)
         localStorage.setItem('emailUsuario', email)
         setTimeout(()=>{
-            window.location.replace('./index.html')
+            window.location.replace('./home.html')
         }, 2000)
         resultadoLogin.innerHTML = "<h3>Estamos te redirecionando. Aguarde alguns instantes...</h3>"
     }
