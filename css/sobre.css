@@ -1,0 +1,157 @@
+/* =================================================== */
+/* ============== ESTILOS DA PÁGINA "SOBRE" ============== */
+/* =================================================== */
+
+/* O .container-principal, h1, e .subtitulo-pagina
+   automaticamente pegarão os estilos que você já
+   definiu para outras páginas (como "Pilares").
+   Não precisamos reescrevê-los.
+*/
+
+/* --- Estilo das Seções --- */
+.secao-historia,
+.secao-identidade,
+.secao-valores {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    /* Separador limpo entre as seções */
+}
+
+/* Títulos das seções */
+.secao-historia h2,
+.secao-identidade h2,
+.secao-valores h2 {
+    font-size: 2.2em;
+    color: var(--cor-texto-logo);
+    margin-bottom: 20px;
+}
+
+/* Subtítulo "Propósito" */
+.secao-identidade h3 {
+    font-size: 1.4em;
+    color: var(--cor-azul-principal);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* --- Lista de Propósitos (Reutilizando o estilo 'Pilar') --- */
+.secao-identidade ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.secao-identidade li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Ícone de "check" customizado */
+.secao-identidade li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--cor-verde-principal);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+/* --- Grid dos Cards de Valores (Desktop/Tablet) --- */
+.card-valores-container {
+    display: grid;
+    /* 2 colunas de tamanho igual */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    /* Espaço entre os cards */
+}
+
+.valor-card {
+    background-color: var(--cor-fundo-offwhite);
+    padding: 25px;
+    border-radius: 8px;
+    /* Destaque sutil com a cor da marca */
+    border-left: 5px solid var(--cor-azul-principal);
+}
+
+.valor-card h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: var(--cor-texto-logo);
+}
+
+.valor-card p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+
+/* --- Seção Final (Call to Action) --- */
+.secao-cta-final {
+    text-align: center;
+    background-color: var(--cor-fundo-offwhite);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /* Margem final da página */
+}
+
+.secao-cta-final h2 {
+    font-size: 2em;
+    color: var(--cor-texto-logo);
+    margin-top: 0;
+}
+
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE (TABLET) ============== */
+/* (Telas com 768px de largura ou menos) */
+/* =================================================== */
+@media (max-width: 1023px) {
+    /* (Para esta página, o layout de 2 colunas dos cards 
+       ainda funciona bem em tablets, então só ajustamos fontes) */
+
+    .secao-historia h2,
+    .secao-identidade h2,
+    .secao-valores h2 {
+        font-size: 1.9em;
+    }
+}
+
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE (MOBILE) ============== */
+/* (Telas com 600px de largura ou menos) */
+/* =================================================== */
+@media (max-width: 768px) {
+
+    .secao-historia h2,
+    .secao-identidade h2,
+    .secao-valores h2 {
+        font-size: 1.6em;
+    }
+
+    /* A MUDANÇA PRINCIPAL: 
+       Os cards de valores agora ficam em 1 coluna */
+    .card-valores-container {
+        grid-template-columns: 1fr;
+        /* 1 coluna */
+        gap: 20px;
+    }
+
+    .secao-identidade li {
+        font-size: 1em;
+        /* Tamanho de fonte padrão */
+    }
+
+    .secao-cta-final {
+        padding: 30px 20px;
+    }
+
+    .secao-cta-final h2 {
+        font-size: 1.7em;
+    }
+}
