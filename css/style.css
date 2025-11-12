@@ -268,6 +268,239 @@ header {
   font-size: 14px;
 }
 
+/* =================================================== */
+/* ============== SEÇÃO CTA DO IMC (HOME) ============== */
+/* =================================================== */
+
+.container-imc-cta {
+  /* Combinando com o estilo da sua seção "Bem-vindo" */
+  background-color: var(--cor-verde-principal);
+  color: white;
+  /* Texto branco sobre o fundo verde */
+  text-align: center;
+  padding: 50px 30px;
+  margin: 40px 0;
+  /* Espaçamento acima e abaixo */
+  border-radius: 8px;
+  /* Cantos arredondados */
+}
+
+.container-imc-cta h2 {
+  color: white;
+  /* Título branco */
+  font-size: 2.2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.container-imc-cta p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 700px;
+  /* Limita a largura do texto */
+  margin: 0 auto 25px auto;
+  /* Centraliza o parágrafo */
+}
+
+/* Estilizando o botão para que se destaque no fundo verde */
+.container-imc-cta .btn {
+  background-color: var(--cor-fundo-branco);
+  /* Botão branco */
+  color: var(--cor-verde-principal);
+  /* Texto verde */
+  font-weight: bold;
+}
+
+.container-imc-cta .btn:hover {
+  background-color: var(--cor-texto-logo);
+  /* Fundo azul escuro no hover */
+  color: var(--cor-fundo-branco);
+}
+
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE DO CTA IMC ============== */
+/* =================================================== */
+
+@media (max-width: 10123px) {
+  .container-imc-cta {
+    padding: 40px 25px;
+  }
+
+  .container-imc-cta h2 {
+    font-size: 1.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-imc-cta {
+    padding: 30px 20px;
+  }
+
+  .container-imc-cta h2 {
+    font-size: 1.6em;
+  }
+
+  .container-imc-cta p {
+    font-size: 1em;
+  }
+}
+
+/* =================================================== */
+/* ============== SEÇÃO CTA DE SUPLEMENTOS (HOME) ============== */
+/* =================================================== */
+
+.container-suplementos-cta {
+  /* Usando a outra cor principal da paleta para variar */
+  background-color: var(--cor-azul-principal);
+  color: white;
+  /* Texto branco sobre o fundo azul */
+  text-align: center;
+  padding: 50px 30px;
+  margin: 40px 0;
+  /* Espaçamento acima e abaixo */
+  border-radius: 8px;
+  /* Cantos arredondados */
+}
+
+.container-suplementos-cta h2 {
+  color: white;
+  /* Título branco */
+  font-size: 2.2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.container-suplementos-cta p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 700px;
+  /* Limita a largura do texto */
+  margin: 0 auto 25px auto;
+  /* Centraliza o parágrafo */
+}
+
+/* Estilizando o botão para que se destaque no fundo azul */
+.container-suplementos-cta .btn {
+  background-color: var(--cor-fundo-branco);
+  /* Botão branco */
+  color: var(--cor-azul-principal);
+  /* Texto azul */
+  font-weight: bold;
+}
+
+.container-suplementos-cta .btn:hover {
+  background-color: var(--cor-texto-logo);
+  /* Fundo azul escuro no hover */
+  color: var(--cor-fundo-branco);
+}
+
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE DO CTA SUPLEMENTOS ============== */
+/* =================================================== */
+
+@media (max-width: 1023px) {
+  .container-suplementos-cta {
+    padding: 40px 25px;
+  }
+
+  .container-suplementos-cta h2 {
+    font-size: 1.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-suplementos-cta {
+    padding: 30px 20px;
+  }
+
+  .container-suplementos-cta h2 {
+    font-size: 1.6em;
+  }
+
+  .container-suplementos-cta p {
+    font-size: 1em;
+  }
+}
+
+/* =================================================== */
+/* ============== SEÇÃO CTA DE CONTATO (HOME) ============== */
+/* =================================================== */
+
+.container-contato-cta {
+  /* Usando a cor escura principal da paleta */
+  background-color: var(--cor-texto-logo);
+  color: white;
+  /* Texto branco sobre o fundo escuro */
+  text-align: center;
+  padding: 50px 30px;
+  margin: 40px 0;
+  /* Espaçamento acima e abaixo */
+  border-radius: 8px;
+  /* Cantos arredondados */
+}
+
+.container-contato-cta h2 {
+  color: white;
+  /* Título branco */
+  font-size: 2.2em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.container-contato-cta p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 700px;
+  /* Limita a largura do texto */
+  margin: 0 auto 25px auto;
+  /* Centraliza o parágrafo */
+}
+
+/* Estilizando o botão para que se destaque no fundo escuro */
+.container-contato-cta .btn {
+  /* Usamos o verde-claro para um ótimo contraste */
+  background-color: var(--cor-verde-principal);
+  color: var(--cor-texto-logo);
+  /* Texto escuro no botão claro */
+  font-weight: bold;
+}
+
+.container-contato-cta .btn:hover {
+  background-color: var(--cor-fundo-branco);
+  /* Fundo branco no hover */
+  color: var(--cor-texto-logo);
+}
+
+
+/* =================================================== */
+/* ============== RESPONSIVIDADE DO CTA CONTATO ============== */
+/* =================================================== */
+
+@media (max-width: 1023px) {
+  .container-contato-cta {
+    padding: 40px 25px;
+  }
+
+  .container-contato-cta h2 {
+    font-size: 1.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-contato-cta {
+    padding: 30px 20px;
+  }
+
+  .container-contato-cta h2 {
+    font-size: 1.6em;
+  }
+
+  .container-contato-cta p {
+    font-size: 1em;
+  }
+}
 
 /* =================================================== */
 /* ============== RESPONSIVIDADE (TABLET) ============== */
