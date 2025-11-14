@@ -19,15 +19,15 @@ function cadastroUser(evento){
         inputNome.value = '';
         inputEmail.value = '';
         inputSenha.value = '';
-        inpuitConfirmarSenha.value = '';  
-        resultadoLogin.innerHTML = "<h3>Senhas diferentes. Digite novamente</h3>"
+        inpuitConfirmarSenha.value = ''; 
+        $("#resultado-login").html("<h3>Senhas diferentes. Digite novamente</h3>").show(); 
     } else{
         localStorage.setItem('nomeUsuario', nome)
         localStorage.setItem('emailUsuario', email)
         setTimeout(()=>{
-            window.location.replace('./home.html')
+            window.location.replace('./index.html')
         }, 2000)
-        resultadoLogin.innerHTML = "<h3>Estamos te redirecionando. Aguarde alguns instantes...</h3>"
+        $("#resultado-login").html("<h3>Estamos te redirecionando. Aguarde alguns instantes...</h3>").show();
     }
 
     loginContainer.innerHTML = '';
